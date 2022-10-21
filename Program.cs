@@ -11,13 +11,19 @@ namespace Задание_3
 
             int N = int.Parse(Console.ReadLine());
             int i = 2;
-            bool remainder = N % i != 0;
+            bool remainder = false;
 
-            while (remainder && i<N)
-            {                
-                    i++;                
+            while (i < N)
+            {
+                if (N % i == 0)
+                {
+                    remainder = true;
+                    break;
+                }
+                else
+                    i++;
             }
-            if (remainder == true)
+            if (remainder == false)
                 Console.WriteLine("Число является простым!");
             else
                 Console.WriteLine("Число не является простым!");
